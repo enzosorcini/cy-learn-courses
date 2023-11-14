@@ -15,7 +15,7 @@ describe("Newsletter subscribe form", () => {
         cy.getByData('success-message').should('not.exist')
     })
 
-    it.only("does not allow subscriptions from already subscribed emails", () => {
+    it("does not allow subscriptions from already subscribed emails", () => {
         cy.getByData('email-input').type("john@example.com")
         cy.getByData('submit-button').click()
         cy.getByData('server-error-message')
